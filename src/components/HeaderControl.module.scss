@@ -1,0 +1,34 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin-right: 5rem;
+
+    & li{
+        margin: 0 3px;
+    }
+}
+
+.header-control{
+    display: flex;
+
+    & .profileBtn{
+        margin-right:5rem ;
+    }
+}
+
+.buybasket {
+    position: relative;
+
+    & span{
+           font-size: 11px;
+    background-color: #FD583E;
+    border-radius: 50%;
+    color: #fff;
+    padding: 3px 7px;
+    top: 0px;
+    left: 27px;
+    position: absolute;
+    }
+}

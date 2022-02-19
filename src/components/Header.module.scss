@@ -1,0 +1,33 @@
+
+
+.header{
+    background-color: #1C1C25;
+    & .logo{
+     margin-left: 5rem;
+     margin-top: 15px;
+        
+    }
+    & .links{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        & li{
+            margin: 0 1.5rem;
+            font-size: 20px;
+            color: #909193;
+
+            & a{
+                color: #909193;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.active{
+    border-bottom: 2px solid #fff;
+    color: #fff !important;
+    padding-bottom: 9px;
+}

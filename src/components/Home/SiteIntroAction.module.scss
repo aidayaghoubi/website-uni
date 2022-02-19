@@ -1,0 +1,58 @@
+.site-intro-action{
+margin-top: 5rem;
+animation: moveFromDownh3 1000ms ease-in-out;
+}
+
+.goColection{
+    background-color: #FD583E;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    padding: 6px 26px;
+    font-weight: 600;
+    margin: 0 10px 0px 0px;
+}
+.basket{
+    border: 2px solid #979797;
+    border-radius: 8px;
+    padding: 7px 13px;
+    background-color: transparent;
+}
+.btnholder{
+    margin-top: 0.8rem;
+    display: flex;
+}
+
+.saleOff{
+    color: #fff;
+    font-size: 24px;
+}
+.percent{
+    color: #979797;
+    font-size: 24px;
+   margin-right: 8px;
+}
+.lastpart{
+    color: #FD583E;
+    font-size: 24px;
+}
+
+@keyframes moveFromDownh3 {
+
+    0%{
+        transform: translate(0 ,800% );
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        transform: translate(0 ,0 );
+        opacity: 1;
+    }
+    
+}
