@@ -2,16 +2,18 @@ import styled from "styled-components";
 import Container from "./Home/container";
 import InnerCountainer from "./Home/InnerContainer";
 
+const MainNav = (props) => {
 
-const Div = styled.div`
+
+    const Div = styled.div`
+    position: fixed;
+    width: 100%;
+    background-color: #1c1c25;
+    background-size: cover;
     
-backgroundColor:transparent;
-background-size: cover;
-overflow: hidden;
+    z-index:999
 
-`
-const MainComponent = (props) => {
-
+    `
     return (
         <Div>
             <Container>
@@ -23,4 +25,4 @@ const MainComponent = (props) => {
     );
 }
 
-export default MainComponent;
+export default MainNav;

@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
 import HeaderControl from './HeaderControl';
-import classes from './Header.module.scss'
+import classes from './Header.module.scss';
+import MainComponent from "./Mainomponent";
+import MainNav from "./MainNavContainer";
 
 const Header = () => {
 
 
     return (
-      
+      <MainNav>
             <nav className={classes.header}>
                 <div className={classes.logo}>
                     <svg id="Group_23" data-name="Group 23" xmlns="http://www.w3.org/2000/svg" width="94.518" height="88.463" viewBox="0 0 94.518 88.463">
@@ -29,6 +31,7 @@ const Header = () => {
                 </ul>
                 <HeaderControl />
             </nav>
+            </MainNav>
       
     )
 }

@@ -1,0 +1,24 @@
+.titleContainer{   
+    
+    & span{
+color:#FFF ;
+    }
+    & p{
+    text-align: left;
+    font-size: 50px;
+    color: #979797;
+    font-weight: bold;
+    position: relative;
+   
+
+    &::before{
+        content: "";
+        width: 73%;
+        height: 5px;
+        left: -73%;
+        position: absolute;
+        top: 13px;
+        background-color: rgb(255, 255, 255);
+    }
+}
+}

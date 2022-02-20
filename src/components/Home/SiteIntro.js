@@ -15,11 +15,12 @@ const SiteIntro = () => {
                         <span className={classes.webTitle}>AIR JORDAN VIII</span>
                         <h1>JORDAN DOMINATES</h1>
                         <h3>The Field And Leaves His Mark</h3>
+                        <SiteIntroAction />
                     </div>
                     <div className={classes['image-holder']}>
                         <img src={MainImage} />
                     </div>
-                    <SiteIntroAction />
+                 
                 </div>
          
         </MainComponent>

@@ -1,19 +1,21 @@
 import styled from "styled-components";
+const Wrapper = styled.div`
+display: block;
+ -webkit-box-sizing: border-box;
+ box-sizing: border-box;
+ width: 100%;
+
+
+ `
 
 const InnerCountainer = (props) => {
 
 
-    const InnerCountainer = styled.div`
-   display: block;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-
-    `
+ 
     return (
-        <InnerCountainer>
+        <Wrapper>
             {props.children}
-        </InnerCountainer>
+        </Wrapper>
     );
 }
 
