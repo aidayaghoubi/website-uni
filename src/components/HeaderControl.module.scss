@@ -7,6 +7,10 @@
 
     & li{
         margin: 0 3px;
+        & a svg{
+                height:25px;
+            
+        }
     }
 }
 
@@ -15,6 +19,9 @@
 
     & .profileBtn{
         margin-right:5rem ;
+        & svg{
+            height: 21px;
+        }
     }
 }
 

@@ -1,6 +1,3 @@
-
-import { Fragment } from 'react';
-
 import Header from './components/Header';
 import { Redirect, Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';

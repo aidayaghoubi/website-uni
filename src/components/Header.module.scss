@@ -5,7 +5,9 @@
     & .logo{
      margin-left: 5rem;
      margin-top: 15px;
-        
+        & svg{
+            height: 50px;
+        }
     }
     & .links{
         display: flex;
@@ -14,13 +16,15 @@
         list-style: none;
         & li{
             margin: 0 1.5rem;
-            font-size: 20px;
+            font-size: 16px;
             color: #909193;
 
             & a{
                 color: #909193;
                 text-decoration: none;
                 font-weight: bold;
+
+               
             }
         }
     }
@@ -30,4 +34,12 @@
     border-bottom: 2px solid #fff;
     color: #fff !important;
     padding-bottom: 9px;
+}
+
+.header__container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #1C1C25;
+    
 }
