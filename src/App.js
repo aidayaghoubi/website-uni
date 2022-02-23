@@ -12,7 +12,7 @@ function App() {
         <Route path='/' exact>
           <Redirect to='/home' />
         </Route>
-        <Route path='/home'>
+        <Route component={Home} path='/home'>
             <Home />
         </Route>
         <Route path='/women'>
