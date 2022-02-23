@@ -6,11 +6,10 @@ const ProdoctTitle  = (props) => {
     const title = props.data.name;
 
 
-    console.log(props)
     return (
         <div className={classes.titleContainer}>
             <p>
-              <span>{title}</span>  
+              <span style={{textTransform: 'uppercase'}}>{title}</span>  
               'S COLLECTION
             </p>
         </div>

@@ -6,14 +6,14 @@ import { Globaldata } from "../../store/availableProduct";
 import ProductWrap from "./productwraper";
 import ProductList from "./productList";
 
-const MenProdoctList = () => {
+const ProdoctList = ({category}) => {
 
     const dataCTX = useContext(Globaldata)
 
-    const MenList = dataCTX.filter(item => item.collection == 'men')
+    const P_list = dataCTX.filter(item => item.collection == category)
 
     const data = {
-        name: 'Men'
+        name:category
     }
 
     const Wrapper = styled.div`
@@ -25,10 +25,11 @@ const MenProdoctList = () => {
     return <Wrapper>
         <MainComponent>
             <ProdoctTitle data={data} />
-            <ProductList data={MenList} />
+            <ProductList data={P_list} />
+            
         </MainComponent>
     </Wrapper>
 
 }
 
-export default MenProdoctList;
+export default ProdoctList;

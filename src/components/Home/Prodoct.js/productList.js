@@ -1,11 +1,12 @@
 import ProductWrap from "./productwraper";
+import classes from './productList.module.scss'
 
 const ProductList = ({ data }) => {
 
     console.log(data)
 
     return (
-        <div>
+        <div className={classes.product_container}>
             {data.map(item => {
                 return <ProductWrap data={item} />
             })}

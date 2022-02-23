@@ -1,7 +1,8 @@
 import SiteIntro from "./Home/SiteIntro";
 import AboutUs from "./Home/Aboutus";
-import ProdoctList from "./Home/Prodoct.js/MenProdoct";
+import ProdoctList from "./Home/Prodoct.js/Prodoct";
 import ProdoctTitle from "./Home/ProdictTitle";
+
 import Database from "./store/availableProduct";
 import { Globaldata } from "./store/availableProduct";
 
@@ -13,7 +14,10 @@ const Home = () => {
         <Database>
             <SiteIntro />
             <AboutUs />
-            <ProdoctList />
+            <ProdoctList category='men'/>
+            <ProdoctList category='women'/>
+            <ProdoctList category='kid'/>
+           
         </Database>
     </section>)
 }

@@ -1,0 +1,109 @@
+.item_wrapper{
+    
+   position: relative;
+overflow: hidden;
+
+    &:hover{
+    
+
+        .add_btn{
+            
+            transform: translateY(15px);
+            cursor: pointer;
+
+            &:hover{
+                transform: scale(1.15) translateY(15px);
+            }
+        }
+        .color_wrapper{
+             transform: translateX(315px);  
+             top: 15%;
+            
+        }
+    }
+
+    & .color_wrapper{
+        cursor: pointer;
+        transform: translateX(391px);
+         top: 15%;       
+        position: absolute;
+        border-radius: 38px;
+        display: flex;
+        width: 38px;
+        background-color: #151919;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 3px 6px 5px rgb(17 16 16 / 50%);
+        flex-direction: column;
+        align-items: center;
+
+        & .colors{
+            
+        }
+        }
+
+    & .add_btn{
+        position: absolute;
+        transform: translateY(-100%);
+        left: 15px;
+       transition:all 0.3s ease-in-out;
+        background-color: #FD583E;
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        padding: 6px 11px;
+    }
+
+    & .image_back{
+        background-color: #151919;
+        border-radius: 15px;
+        height: 275px;
+        width: 345px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & ._img{
+            width: 300px;
+            height: auto;
+        }
+    
+    }
+    & .lable{
+        color: #FD583E;
+        font-size: 20px;
+        margin:12px 5px 4px 4px;
+    }
+    & ._name{
+        color: #979797;
+        margin:8px 5px;
+        font-size: 18px;
+    }
+
+  
+    & .price_container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & ._color{
+            color: #fff;
+            font-size: 18px;
+
+            & span{
+                color: #979797;
+            }
+        }
+        & ._price{
+            color: #ffffff;
+            margin:12px 5px;
+            font-size: 20px;
+    
+            & span{
+                color: #979797;
+            }
+        }
+    }
+}
+
