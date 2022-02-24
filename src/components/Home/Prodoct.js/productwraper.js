@@ -2,12 +2,24 @@
 import { useContext } from 'react';
 import MainComponent from '../../Mainomponent';
 import { Globaldata } from '../../store/availableProduct';
-import classes from './productwraper.module.scss'
+import classes from './productwraper.module.scss';
+import FunctionalProvider, { FunctionalContext } from '../../store/product-context';
 
 const ProductWrap = ({ data }) => {
 
+    const productCTX = useContext(FunctionalContext);
+   
+    const addItemTolist = (eve) => {
 
-    const whatIsIt = (eve) => {
+        productCTX.addItem({
+            id:data.style_code,
+            name:data.P_name,
+            amount:1,
+            description:data.P_description,
+            price:data.price,
+            img_url:data.img_url,
+            totalprice:0
+        } )
 
     }
 
@@ -27,7 +39,7 @@ const ProductWrap = ({ data }) => {
                             <div className={classes.colors} style={{ backgroundColor: `${el}` }} key={i}></div>)
                     }
                 </div>
-                <button className={classes.add_btn} onClick={whatIsIt}>+</button>
+                <button className={classes.add_btn} onClick={addItemTolist}>+</button>
                 <div className={classes.image_back}>
                     <img className={classes._img} src={data.img_url} />
                 </div>

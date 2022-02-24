@@ -6,7 +6,7 @@ const ProductDirectory = ({ data }) => {
     return (
         <div className={classes.product_container}>
             {data.map(item => {
-                return <ProductWrap data={item} />
+                return <ProductWrap data={item} key={item.style_code}/>
             })}
         </div>
     )
