@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import { Redirect, Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
+import ProductPage from './components/ProductPagese';
 import Home from './components/Home';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
             <Home />
         </Route>
         <Route path='/women'>
-
+            <ProductPage colection='women'/>
         </Route>
         <Route path='/men'>
 

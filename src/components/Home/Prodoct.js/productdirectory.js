@@ -1,9 +1,7 @@
 import ProductWrap from "./productwraper";
 import classes from './productList.module.scss'
 
-const ProductList = ({ data }) => {
-
-    console.log(data)
+const ProductDirectory = ({ data }) => {
 
     return (
         <div className={classes.product_container}>
@@ -14,4 +12,4 @@ const ProductList = ({ data }) => {
     )
 }
 
-export default ProductList;
+export default ProductDirectory;

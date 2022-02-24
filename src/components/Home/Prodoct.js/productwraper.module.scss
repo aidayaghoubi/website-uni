@@ -1,11 +1,10 @@
 .item_wrapper{
     
-   position: relative;
-overflow: hidden;
+    position: relative;
+    // overflow: hidden;
 
     &:hover{
     
-
         .add_btn{
             
             transform: translateY(15px);
@@ -16,9 +15,18 @@ overflow: hidden;
             }
         }
         .color_wrapper{
-             transform: translateX(315px);  
+             transform: translateX(300px);  
+          
              top: 15%;
             
+             & .colors{
+                width: 30px;
+                height: 30px;
+                background-color: #1aaedb;
+                /* padding: 3px 4px; */
+                border-radius: 50%;
+                margin: 3px 2px;
+             }
         }
     }
 
@@ -30,7 +38,7 @@ overflow: hidden;
         border-radius: 38px;
         display: flex;
         width: 38px;
-        background-color: #151919;
+        background-color: #414747;
         transition: all 0.3s ease-in-out;
         box-shadow: 3px 6px 5px rgb(17 16 16 / 50%);
         flex-direction: column;

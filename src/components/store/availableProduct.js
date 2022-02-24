@@ -15,7 +15,7 @@ const Dummy_product = [
     {
         style_code: `m1`,
         collection: 'men',
-        color:5,
+        color:['red','blue','purple'],
         P_name: 'Air Jordan I Converse All Star College',
         price: 119,
         img_url: img_men1,
@@ -24,7 +24,7 @@ const Dummy_product = [
     {
         style_code: `m2`,
         collection: 'men',
-        color:2,
+        color:['grean','orange','yellow'],
         P_name: 'Air Jordan I Converse All Star College',
         price: 217,
         img_url: img_men2,
@@ -33,7 +33,7 @@ const Dummy_product = [
     {
         style_code: `m3`,
         collection: 'men',
-        color:3,
+        color:['crismon','black','pink'],
         P_name: 'Air Jordan I Converse All Star College',
         price: 55.9,
         img_url: img_men3,
@@ -42,7 +42,7 @@ const Dummy_product = [
     {
         style_code: `m4`,
         collection: 'women',
-        color:1,
+        color: ['blue' , 'pink' , 'yellow'],
         P_name: 'Air Jordan I Converse All Star College',
         price: 550,
         img_url: img_women1,
@@ -51,7 +51,7 @@ const Dummy_product = [
     {
         style_code: `m5`,
         collection: 'women',
-        color:4,
+        color:['grean','orange','yellow'],
         P_name: 'Air Jordan I Converse All Star College',
         price: 515,
         img_url: img_women2,
@@ -59,7 +59,7 @@ const Dummy_product = [
     },
     {
         style_code: `m6`,
-        color:2,
+        color:['gray','red','yellow'],
         collection: 'women',
         P_name: 'Air Jordan I Converse All Star College',
         price: 119,
@@ -68,7 +68,7 @@ const Dummy_product = [
     },
     {
         style_code: `m7`,
-        color:2,
+        color:['grean','orange','brown'],
         collection: 'kid',
         P_name: 'Air Jordan I Converse All Star College',
         price: 119,
@@ -77,7 +77,7 @@ const Dummy_product = [
     },
     {
         style_code: `m8`,
-        color:2,
+        color:['red','blue','purple','gray'],
         collection: 'kid',
         P_name: 'Air Jordan I Converse All Star College',
         price: 119,
@@ -86,7 +86,7 @@ const Dummy_product = [
     },
     {
         style_code: `m9`,
-        color:2,
+        color:['red','white','green','purple'],
         collection: 'kid',
         P_name: 'Air Jordan I Converse All Star College',
         price: 119,
