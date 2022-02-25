@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect , useState } from "react";
 import { FunctionalContext } from "../product-context";
 import styledComponents from "styled-components";
 import styled from "styled-components";
@@ -82,23 +82,59 @@ const Wrapper = styledComponents.div`
                     }
                 }
             }
+
+
+
+            .boucing span{
+                animation: bumoi 500ms ease-out;
+              }
+              @keyframes bumoi{
+                0% {
+                    color: #fff;
+                }
+                40% {
+                    color: #fd583e;
+                }
+                80% {
+                    color: #fff;
+                }
+                100% {
+                    color: #fd583e;
+                }
+               
+              }
+              
+
 `
 
 
 const ProductInCart = ({ value }) => {
 
     const productCtx = useContext(FunctionalContext)
-    const product = productCtx.items.map(item => item)
-    console.log(value)
+    const [btnBouncing ,setBtnBouncing] = useState(false)
 
     const onAddHandler = () => {
         productCtx.addItem(value);
-        console.log('treu')
     }
     const onreduceHandler = () => {
         productCtx.removeItem(value);
-        console.log('treu')
     }
+
+    useEffect(()=>{
+        setBtnBouncing(true)
+        const timer = setTimeout(() => {
+            setBtnBouncing(false)
+        }, 500)
+
+        return () => {
+            clearTimeout(timer);
+        }
+
+    } , [productCtx.items])
+
+    
+    const priceClass = `price  ${btnBouncing ? 'boucing' : ''}`;
+ 
     return (
         <Wrapper>
             <img src={value.img_url} />
@@ -112,7 +148,7 @@ const ProductInCart = ({ value }) => {
                         <p className="amount">{value.amount}</p>
                         <button onClick={onAddHandler}>+</button>
                     </div>
-                    <p className="price">Total Price : $ {value.totalprice}</p>
+                    <p className={priceClass}>Total Price : <span>$ {value.totalprice}</span></p>
                 </div>
             </div>
 

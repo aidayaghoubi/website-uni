@@ -39,3 +39,29 @@
     position: absolute;
     }
 }
+
+
+.boucing{
+    animation: bumoi 300ms ease-out;
+  }
+  @keyframes bumoi{
+    0% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(0.8);
+    }
+    30% {
+      transform: scale(1.15);
+    }
+    50% {
+      transform: scale(1.45);
+    }
+    70% {
+        transform: scale(1.20);
+      }
+    100%{
+      transform: scale(1);
+    }
+  }
+  

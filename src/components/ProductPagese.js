@@ -16,8 +16,7 @@ const ProductPage = (props) => {
     })
 
     const data = props.colection;
-    console.log(relatedProduct)
-
+  
     return (
         <Database>
             <MainComponent>

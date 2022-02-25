@@ -12,35 +12,30 @@ const FunctionalProvider = ({ children }) => {
             totalAmount: 0
         }
     )
-    const addItem = (item) => {
+    const addItem = (item) => { 
 
         if (state.items.find(product => product.id === item.id)) {
            let itemIndex = state.items.findIndex(product => product.id === item.id)
            state.items[itemIndex].amount +=1;
            state.totalAmount +=1;
            state.items[itemIndex].totalprice =(state.items[itemIndex].price * state.items[itemIndex].amount);
-        //  let currentItems = JSON.parse(JSON.stringify(state.items));
-            setState(state => ({...state , totalAmount:state.totalAmount}))
-                
+           let currentItems = JSON.parse(JSON.stringify(state.items));
+           
+            setState(state => ({...state , items: currentItems ,totalAmount:state.totalAmount}))
 
         } else {
             let currentItems = JSON.parse(JSON.stringify(state.items));
             state.totalAmount +=1;
             currentItems = [...currentItems, item];
             setState(state => ({ ...state, items: currentItems }));
-        
         }
-
     }
-
-    
-
     const removeItem = (item) => {
-
         if (state.items.find(product => product.id === item.id)) {
             let itemIndex = state.items.findIndex(product => product.id === item.id)
             state.items[itemIndex].amount -=1;
             state.totalAmount -=1;
+            state.items[itemIndex].totalprice =(state.items[itemIndex].price * state.items[itemIndex].amount);
             let currentItems = JSON.parse(JSON.stringify(state.items));
             setState(state => ({ ...state, items: currentItems }));
             if(state.items[itemIndex].amount === 0){
@@ -57,7 +52,9 @@ const FunctionalProvider = ({ children }) => {
     
 
     return (
-        <FunctionalContext.Provider value={{ items: state.items, totalAmount: state.totalAmount, addItem, removeItem ,addtoFavorite }}>
+        <FunctionalContext.Provider 
+        value={{ items: state.items, totalAmount: state.totalAmount,
+         addItem, removeItem ,addtoFavorite }}>
             {children}
         </FunctionalContext.Provider>
     )

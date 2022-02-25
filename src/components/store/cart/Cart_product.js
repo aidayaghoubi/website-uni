@@ -25,7 +25,7 @@ const CartProduct = () => {
         <MainComponent>
             <Wrapeer>
                 {product.map(item => {
-                    return <ProductInCart value={item} />
+                    return <ProductInCart value={item} key={item.id}/>
                 })}
             </Wrapeer>
         </MainComponent>

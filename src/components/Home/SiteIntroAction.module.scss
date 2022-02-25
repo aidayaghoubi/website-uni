@@ -59,3 +59,47 @@ animation: moveFromDownh3 1000ms ease-in-out;
     }
     
 }
+
+
+.basket {
+    // @include btn(thistle, true);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+
+     span svg {
+        position: relative;
+        z-index: 2;
+        transition: 0.3s;
+    }
+    span svg path{
+        transition: 0.3s;
+    }
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #FD583E;
+        position: absolute;
+        border-radius: 50%;
+        left: 0;
+        top: -100%;
+        transition: 0.5s;
+    }
+
+    &:hover {
+        border-color: #fff;
+        // p {
+        //     color: white;
+        // }
+        span svg path{
+            fill: #fff;
+            stroke: #fff;
+        }
+
+        &::after {
+            transform: scale(3.3);
+        }
+    }
+}

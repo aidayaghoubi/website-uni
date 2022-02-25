@@ -49,13 +49,7 @@ const ProductWrap = ({ data }) => {
                     <p className={classes._price}>{data.price} <span>$</span></p>
                     <p className={classes._color}>{data.color.length} <span>colors</span></p>
                 </div>
-                <button className={classes.favorite}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28.668" height="25.352" viewBox="0 0 28.668 25.352">
-                        <path id="Path_47" dataName="Path 47" d="M3687.977,1159.855a8.752,8.752,0,0,1,6.2-4.262c2.063-.267,8.811,1.062,7.546,8.693-.624,4.774-8.281,10.591-13.751,15.467a62.927,62.927,0,0,1-10.2-9.183c-2.474-2.924-3.741-6.2-3.514-8.156.566-4.882,4.276-6.554,7.728-6.554S3687.977,1159.855,3687.977,1159.855Z" 
-                        transform="translate(-3673.724 -1155.038)" fill="none" stroke="#FD583E" strokeWidth="1" />
-                    </svg>
-
-                </button>
+               
             </div>
         </MainComponent>
     )

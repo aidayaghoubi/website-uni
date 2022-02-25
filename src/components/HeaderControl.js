@@ -1,23 +1,44 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import classes from './HeaderControl.module.scss';
 import { FunctionalContext } from "./store/product-context";
+import { useEffect } from "react";
 
 const HeaderControl = () => {
 
     const productCTX = useContext(FunctionalContext);
+  
+    const [btnBouncing ,setBtnBouncing] = useState(false)
+
     let amount = 0 ;
+
+    useEffect(() => {
+
+        setBtnBouncing(true)
+        const timer = setTimeout(() => {
+            setBtnBouncing(false)
+        }, 500)
+
+        return () => {
+            clearTimeout(timer);
+        }
+    }, [productCTX.items])
+
+    
     if (productCTX.items.length > 0) {
        amount =  productCTX.items.reduce((acc, cur) => acc + cur.amount , 0 )
     }
 
-    console.log(amount)
+   
     // if(productCTX.items){
 
     //     productCTX.items?.reduce((curr , acc) => {
     //     })
     // }
 
+
+
+    const btnclass = `${classes.buybasket}  ${btnBouncing ? classes.boucing : ''}`;
 
     return (
             <div className={classes['header-control']}>
@@ -50,7 +71,7 @@ const HeaderControl = () => {
 
                         </NavLink>
                     </li>
-                    <li className={classes.buybasket}>
+                    <li className={btnclass} >
                         <NavLink to='/cart' >
                             <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
                                 <g id="Group_81" data-name="Group 81" transform="translate(-1625 -1410)">
