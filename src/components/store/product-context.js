@@ -33,16 +33,31 @@ const FunctionalProvider = ({ children }) => {
 
     }
 
-    console.log(state.items)
+    
 
-    const removeItem = () => {
-        console.log('remove')
+    const removeItem = (item) => {
+
+        if (state.items.find(product => product.id === item.id)) {
+            let itemIndex = state.items.findIndex(product => product.id === item.id)
+            state.items[itemIndex].amount -=1;
+            state.totalAmount -=1;
+            let currentItems = JSON.parse(JSON.stringify(state.items));
+            setState(state => ({ ...state, items: currentItems }));
+            if(state.items[itemIndex].amount === 0){
+                let newp = state.items.filter(item => item.id !== state.items[itemIndex].id)
+                let currentItems = JSON.parse(JSON.stringify(newp));
+                setState(state => ({ ...state, items: currentItems }));
+            }
+         }
+    }
+    const addtoFavorite = (item) => {
+      
     }
 
     
 
     return (
-        <FunctionalContext.Provider value={{ items: state.items, totalAmount: state.totalAmount, addItem, removeItem }}>
+        <FunctionalContext.Provider value={{ items: state.items, totalAmount: state.totalAmount, addItem, removeItem ,addtoFavorite }}>
             {children}
         </FunctionalContext.Provider>
     )

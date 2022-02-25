@@ -51,7 +51,7 @@ const HeaderControl = () => {
                         </NavLink>
                     </li>
                     <li className={classes.buybasket}>
-                        <NavLink to='/home' >
+                        <NavLink to='/cart' >
                             <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
                                 <g id="Group_81" data-name="Group 81" transform="translate(-1625 -1410)">
                                     <rect id="Rectangle_29" data-name="Rectangle 29" width="37" height="37" transform="translate(1625 1410)" fill="none" />
@@ -61,8 +61,8 @@ const HeaderControl = () => {
                                     </g>
                                 </g>
                             </svg>
-                        </NavLink>
                         <span>{amount}</span>
+                        </NavLink>
                     </li>
                 </ul>
                 <NavLink to='/profile' className={classes.profileBtn}>

@@ -26,7 +26,7 @@ const Header = () => {
                         <NavLink to='/women' activeClassName={classes.active}>Women</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/kids' activeClassName={classes.active}>kids</NavLink>
+                        <NavLink to='/kid' activeClassName={classes.active}>kids</NavLink>
                     </li>
                 </ul>
                 <HeaderControl />

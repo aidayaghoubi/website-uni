@@ -4,6 +4,7 @@ import { Switch } from 'react-router-dom';
 import ProductPage from './components/ProductPagese';
 import Home from './components/Home';
 import FunctionalProvider from './components/store/product-context';
+import CartProduct from './components/store/cart/Cart_product';
 
 
 function App() {
@@ -26,8 +27,11 @@ function App() {
             <ProductPage colection='men' />
 
           </Route>
-          <Route path='/kids'>
+          <Route path='/kid'>
           <ProductPage colection='kid' />
+          </Route>
+          <Route path='/cart'>
+          <CartProduct />
           </Route>
           <Route path='*'>
 
