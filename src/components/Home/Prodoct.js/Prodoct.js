@@ -19,7 +19,7 @@ const ProdoctList = ({category}) => {
 
 
 
-    const P_list = dataCTX.filter(item => item.collection === category)
+    const P_list = dataCTX.filter(item => item.collection === category).slice(0,3)
 
     const data = {
         name:category

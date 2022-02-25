@@ -23,10 +23,11 @@ function App() {
             <ProductPage colection='women' />
           </Route>
           <Route path='/men'>
+            <ProductPage colection='men' />
 
           </Route>
           <Route path='/kids'>
-
+          <ProductPage colection='kid' />
           </Route>
           <Route path='*'>
 

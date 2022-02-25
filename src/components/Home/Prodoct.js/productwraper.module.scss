@@ -1,6 +1,7 @@
 .item_wrapper{
     
     position: relative;
+    margin: 15px 0;
     // overflow: hidden;
 
     &:hover{
@@ -51,7 +52,7 @@
 
     & .add_btn{
         position: absolute;
-        transform: translateY(-100%);
+        transform: translateY(-210%);
         left: 15px;
        transition:all 0.3s ease-in-out;
         background-color: #FD583E;
