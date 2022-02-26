@@ -1,67 +1,93 @@
-.nav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    margin-right: 5rem;
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin-right: 5rem;
 
-    & li{
-        margin: 0 3px;
-        & a svg{
-                height:25px;
-            
-        }
+  & li {
+    margin: 0 3px;
+    & a svg {
+      height: 25px;
     }
+  }
 }
 
-.header-control{
-    display: flex;
+.header-control {
+  display: flex;
 
-    & .profileBtn{
-        margin-right:5rem ;
-        & svg{
-            height: 21px;
-        }
+  & .profileBtn {
+    margin-right: 5rem;
+    & svg {
+      height: 21px;
     }
+  }
 }
 
 .buybasket {
-    position: relative;
+  position: relative;
 
-    & span{
-           font-size: 11px;
-    background-color: #FD583E;
+  & span {
+    font-size: 11px;
+    background-color: #fd583e;
     border-radius: 50%;
     color: #fff;
     padding: 3px 7px;
     top: 0px;
     left: 27px;
     position: absolute;
-    }
+  }
 }
 
+.boucing {
+  animation: bumoi 300ms ease-out;
+}
+@keyframes bumoi {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.8);
+  }
+  30% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1.45);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
-.boucing{
-    animation: bumoi 300ms ease-out;
-  }
-  @keyframes bumoi{
-    0% {
-      transform: scale(1);
-    }
-    10% {
-      transform: scale(0.8);
-    }
-    30% {
-      transform: scale(1.15);
-    }
-    50% {
-      transform: scale(1.45);
-    }
-    70% {
-        transform: scale(1.20);
-      }
-    100%{
-      transform: scale(1);
+.inputCntrol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & input{
+    background-color: transparent;
+    border: none;
+    width: 130px;
+    font-size: 16px;
+    color: rgb(202, 200, 200);
+    border-bottom: 2px solid #fff;
+    padding-bottom: 4px;
+    padding: 4px 7px;
+
+    &:focus-visible{
+      
+      outline: none;
     }
   }
-  
+  & a {
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px;
+    padding-bottom: 3px;
+  }
+}

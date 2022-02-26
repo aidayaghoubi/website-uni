@@ -30,6 +30,7 @@ const Wrapper = styledComponents.div`
                 flex-direction: column;
                 align-items: left;
                 justify-content: center;
+                width: 45%;
                
             }
             & .ttile{

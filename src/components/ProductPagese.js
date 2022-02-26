@@ -2,9 +2,9 @@ import MainComponent from "./Mainomponent";
 import { Globaldata } from "./store/availableProduct";
 import Database from "./store/availableProduct";
 import { useContext } from "react";
-import ProductWrap from "./Home/Prodoct.js/productwraper";
-import ProdoctList from "./Home/Prodoct.js/Prodoct";
-import ProductDirectory from "./Home/Prodoct.js/productdirectory";
+import ProductWrap from "./Home/Prodoct/productwraper";
+import ProdoctList from "./Home/Prodoct/Prodoct";
+import ProductDirectory from "./Home/Prodoct/productdirectory";
 import ProdoctTitle from "./Home/ProdictTitle";
 
 
