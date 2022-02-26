@@ -1,0 +1,138 @@
+.site-intro-action {
+  margin-top: 5rem;
+  -webkit-animation: moveFromDownh3 1000ms ease-in-out;
+          animation: moveFromDownh3 1000ms ease-in-out;
+}
+
+.goColection {
+  background-color: #FD583E;
+  border: none;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  padding: 6px 26px;
+  font-weight: 600;
+  margin: 0 10px 0px 0px;
+  cursor: pointer;
+}
+
+.basket {
+  border: 2px solid #979797;
+  border-radius: 8px;
+  padding: 7px 13px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btnholder {
+  margin-top: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.saleOff {
+  color: #fff;
+  font-size: 24px;
+}
+
+.percent {
+  color: #979797;
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.lastpart {
+  color: #FD583E;
+  font-size: 24px;
+}
+
+@-webkit-keyframes moveFromDownh3 {
+  0% {
+    -webkit-transform: translate(0, 800%);
+            transform: translate(0, 800%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveFromDownh3 {
+  0% {
+    -webkit-transform: translate(0, 800%);
+            transform: translate(0, 800%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.basket {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.basket span svg {
+  position: relative;
+  z-index: 2;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.basket span svg path {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.basket::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #FD583E;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: -100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.basket:hover {
+  border-color: #fff;
+}
+
+.basket:hover span svg path {
+  fill: #fff;
+  stroke: #fff;
+}
+
+.basket:hover::after {
+  -webkit-transform: scale(3.3);
+          transform: scale(3.3);
+}
+/*# sourceMappingURL=SiteIntroAction.module.css.map */

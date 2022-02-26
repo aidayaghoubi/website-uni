@@ -1,0 +1,22 @@
+.titleContainer span {
+  color: #FFF;
+}
+
+.titleContainer p {
+  text-align: left;
+  font-size: 50px;
+  color: #979797;
+  font-weight: bold;
+  position: relative;
+}
+
+.titleContainer p::before {
+  content: "";
+  width: 74%;
+  height: 5px;
+  left: -73.5%;
+  position: absolute;
+  top: 44px;
+  background-color: white;
+}
+/*# sourceMappingURL=ProdictTitle.module.css.map */

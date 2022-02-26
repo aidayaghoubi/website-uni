@@ -1,0 +1,145 @@
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  margin-right: 5rem;
+}
+
+.nav li {
+  margin: 0 3px;
+}
+
+.nav li a svg {
+  height: 25px;
+}
+
+.header-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-control .profileBtn {
+  margin-right: 5rem;
+}
+
+.header-control .profileBtn svg {
+  height: 21px;
+}
+
+.buybasket {
+  position: relative;
+}
+
+.buybasket span {
+  font-size: 11px;
+  background-color: #fd583e;
+  border-radius: 50%;
+  color: #fff;
+  padding: 3px 7px;
+  top: 0px;
+  left: 27px;
+  position: absolute;
+}
+
+.boucing {
+  -webkit-animation: bumoi 300ms ease-out;
+          animation: bumoi 300ms ease-out;
+}
+
+@-webkit-keyframes bumoi {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  10% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  30% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  50% {
+    -webkit-transform: scale(1.45);
+            transform: scale(1.45);
+  }
+  70% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes bumoi {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  10% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  30% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  50% {
+    -webkit-transform: scale(1.45);
+            transform: scale(1.45);
+  }
+  70% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.inputCntrol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.inputCntrol input {
+  background-color: transparent;
+  border: none;
+  width: 130px;
+  font-size: 16px;
+  color: #cac8c8;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 4px;
+  padding: 4px 7px;
+}
+
+.inputCntrol input:focus-visible {
+  outline: none;
+}
+
+.inputCntrol a {
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 5px;
+  padding-bottom: 3px;
+}
+/*# sourceMappingURL=HeaderControl.module.css.map */

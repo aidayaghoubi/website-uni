@@ -109,7 +109,7 @@ const Dummy_product = [
         style_code: `29`,
         collection: 'men',
         color:['crismon','black','pink'],
-        P_name: 'Light Crimson / Midnight Navy — University Blue — White',
+        P_name: 'Light Crimson / Midnight Navy ',
         price: 55.9,
         img_url: img_men9,
         P_description: 'Converse All Star College'
@@ -127,7 +127,7 @@ const Dummy_product = [
         style_code: `m7`,
         color:['gray','red','yellow'],
         collection: 'women',
-        P_name: 'Black / Black — White — Varsity Royal — Varsity Red',
+        P_name: 'Black / Black — White',
         price: 119,
         img_url: img_women11,
         P_description: 'Converse All Star College'
