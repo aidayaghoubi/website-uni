@@ -1,12 +1,12 @@
 import Modal from "./Modal";
 import ProductDirectory from "../Home/Prodoct/productdirectory.js" ;
 
-const SearchCart = (props) => {
+const SearchCart = ({serachedItem}) => {
 
-
+    
 
     return <Modal>
-         <ProductDirectory /> 
+          <ProductDirectory data={serachedItem}/> 
     </Modal>
 }
 

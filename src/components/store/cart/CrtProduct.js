@@ -118,7 +118,7 @@ const ProductInCart = ({ value }) => {
         productCtx.addItem(value);
     }
     const onreduceHandler = () => {
-        productCtx.removeItem(value);
+        productCtx.removeItem(value.id);
     }
 
     useEffect(()=>{
