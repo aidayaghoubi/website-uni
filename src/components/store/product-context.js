@@ -72,14 +72,20 @@ const FunctionalProvider = ({ children }) => {
     }
     const addtoFavorite = (item) => {
       
+
     }
+    const removFromFavorite = (item) => {
+      
+        
+    }
+
 
     
 
     return (
         <FunctionalContext.Provider 
         value={{ items: state.items, totalAmount: state.totalAmount,
-         addItem, removeItem ,addtoFavorite }}>
+         addItem, removeItem ,addtoFavorite , removFromFavorite }}>
             {children}
         </FunctionalContext.Provider>
     )

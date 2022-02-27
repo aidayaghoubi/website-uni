@@ -83,11 +83,40 @@
       outline: none;
     }
   }
-  & a {
+  & button {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
     margin: 0 5px;
     padding-bottom: 3px;
   }
 }
+
+
+.hide{
+  width: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  // & input{
+  //   width: 0;
+  // }
+}
+.show{
+  width: 100%;
+  transition: 0.5s;
+//  & input{
+//   width: 130px;
+// }
+}
+
+// @keyframes open {
+//   0%{
+//     width: 0%;
+//   }
+//   100%{
+//     width: 100%;
+//   }
+  
+// }

@@ -11,7 +11,7 @@ const HeaderControl = (props) => {
     const productCTX = useContext(FunctionalContext);
     const availbalePCTX = useContext(Globaldata);
 
-    
+
 
     const searchInputRef = useRef('');
 
@@ -19,7 +19,7 @@ const HeaderControl = (props) => {
 
     const [searchIsClicked, setSearchIsClicked] = useState(false);
     const [searchModalShow, setSearchModalShow] = useState(false);
-    const [searchedrezult ,setSearchedrezult ] = useState(null)
+    const [searchedrezult, setSearchedrezult] = useState(null)
 
     const inputOncanegHandler = () => {
 
@@ -27,7 +27,7 @@ const HeaderControl = (props) => {
         const searchedDate = availbalePCTX.filter((item) => item.P_name.toLowerCase().includes(searchInputRef.current.value.toLowerCase()))
         setSearchedrezult(searchedDate)
         setSearchModalShow(true)
-      
+
 
     }
 
@@ -36,7 +36,8 @@ const HeaderControl = (props) => {
     }
 
     const closeInputHandler = () => {
-        setSearchIsClicked(false)
+        setSearchIsClicked(false);
+        setSearchModalShow(false);
     }
 
     // const onBlurInputHandler = () => {
@@ -46,7 +47,7 @@ const HeaderControl = (props) => {
     // const dataShouldShow = (item) => {
 
     // }
-    
+
     let amount = 0;
 
     useEffect(() => {
@@ -63,12 +64,12 @@ const HeaderControl = (props) => {
 
 
     useLayoutEffect(() => {
-        if(searchModalShow) {
+        if (searchModalShow) {
             document.body.style.overflow = "hidden";
-        }else {
+        } else {
             document.body.style.overflow = "auto";
         }
-    } , [searchModalShow]);
+    }, [searchModalShow]);
 
     if (productCTX.items.length > 0) {
         amount = productCTX.items.reduce((acc, cur) => acc + cur.amount, 0)
@@ -80,7 +81,7 @@ const HeaderControl = (props) => {
         <Fragment>
             <div className={classes['header-control']}>
                 <ul className={classes.nav}>
-                    {!searchIsClicked ? <li> <a to='/home' onClick={searhClickHandler}>
+                    {!searchIsClicked ? <li style={{ cursor: 'pointer' }}> <a to='/home' onClick={searhClickHandler}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
                             <g id="Group_81" data-name="Group 81" transform="translate(-1625 -1410)">
                                 <g id="find" transform="translate(1630.752 1415.726)">
@@ -93,12 +94,20 @@ const HeaderControl = (props) => {
                     </a>
                     </li> : ''}
 
-                        {searchIsClicked ? <li className={classes.inputCntrol}>
+                    {/* {searchIsClicked ? <li className={classes.inputCntrol}>
                             <input autoFocus ref={searchInputRef} onChange={inputOncanegHandler}></input>
-                        <a onClick={closeInputHandler}>x</a>
-                    </li>
-                        : ''}
-                    { <li>
+                        <button onClick={closeInputHandler}>x</button> */}
+                    {<div className={searchIsClicked ? `${classes.show}` : `${classes.hide}`}>
+                        <li className={classes.inputCntrol}>
+                            <input autoFocus ref={searchInputRef} onChange={inputOncanegHandler}></input>
+                            <button onClick={closeInputHandler}>x</button>
+
+                        </li>
+                    </div>}
+                   
+                
+                 
+                    {<li>
                         <NavLink to='/home'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
                                 <g id="Group_83" data-name="Group 83" transform="translate(-1628 -1453)">
@@ -112,7 +121,7 @@ const HeaderControl = (props) => {
                             </svg>
 
                         </NavLink>
-                    </li> }
+                    </li>}
                     <li className={btnclass} >
                         <NavLink to='/cart' >
                             <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">

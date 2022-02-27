@@ -25,18 +25,19 @@ const Wrapper = styled.div`
         }
     `
 
-const ProdoctList = ({category}) => {
+const ProdoctList = ({ category }) => {
 
     const dataCTX = useContext(Globaldata);
+    console.log(dataCTX)
 
 
 
 
+    const P_list = dataCTX.items.filter(item => item.collection === category).slice(0, 3)
 
-    const P_list = dataCTX.filter(item => item.collection === category).slice(0,3)
-
+    console.log(P_list);
     const data = {
-        name:category
+        name: category
     }
 
 
@@ -45,7 +46,7 @@ const ProdoctList = ({category}) => {
             <ProdoctTitle data={data} />
             <ProductDirectory data={P_list} />
             <Link to={`/${category}`} className="more_btn">MORE +</Link>
-        </MainComponent>    
+        </MainComponent>
     </Wrapper>
 
 }
