@@ -98,7 +98,7 @@ const HeaderControl = (props) => {
                         <a onClick={closeInputHandler}>x</a>
                     </li>
                         : ''}
-                    {/* <li>
+                    { <li>
                         <NavLink to='/home'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
                                 <g id="Group_83" data-name="Group 83" transform="translate(-1628 -1453)">
@@ -112,7 +112,7 @@ const HeaderControl = (props) => {
                             </svg>
 
                         </NavLink>
-                    </li> */}
+                    </li> }
                     <li className={btnclass} >
                         <NavLink to='/cart' >
                             <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
