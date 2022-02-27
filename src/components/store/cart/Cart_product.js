@@ -19,13 +19,35 @@ const Wrapeer = styledComponents.div`
 const CartProduct = () => {
 
     const productCtx = useContext(FunctionalContext)
-    const product = productCtx.items.map(item => item)
+    const product = productCtx.items.map(item => item);
+    // const totalPrice = productCtx.items.totalPrice.reduce((acc, curr) => {
+    //     acc = acc + curr
+    // })
+    // let totalprice = 0;
+
+    // product.map(item => {
+    //     totalprice = totalprice + item.totalprice
+    // });
+
+    const totalPrice = product.reduce((acc , curr) =>  acc + curr.totalprice * curr.amount , 0);
+    const totalAmount = product.reduce((acc , curr) =>  acc + curr.amount , 0);
+    console.log(totalPrice , totalAmount)
+
+    const prop = { 
+        name:'ida',
+        addres:{
+            blv:'',
+            
+        }
+    }
 
     return (
-        <MainComponent>
+        <MainComponent >
             <Wrapeer>
                 {product.map(item => {
-                    return <ProductInCart value={item} key={item.id}/>
+                    return <ProductInCart {...item} age='18' lastname='alde' ff={prop} />
+                    // value={item} key={item.id}
+                    
                 })}
             </Wrapeer>
         </MainComponent>

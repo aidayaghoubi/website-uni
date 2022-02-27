@@ -23,15 +23,18 @@ function App() {
           <Route path='/women'>
             <ProductPage colection='women' />
           </Route>
+          {/* <Route path='/women/:id'>
+            <SingleWowenProduct colection='women' />
+          </Route> */}
           <Route path='/men'>
             <ProductPage colection='men' />
 
           </Route>
           <Route path='/kid'>
-          <ProductPage colection='kid' />
+            <ProductPage colection='kid' />
           </Route>
           <Route path='/cart'>
-          <CartProduct />
+            <CartProduct />
           </Route>
           <Route path='*'>
 

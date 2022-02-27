@@ -109,16 +109,17 @@ const Wrapper = styledComponents.div`
 `
 
 
-const ProductInCart = ({ value }) => {
+const ProductInCart = (item) => {
+
 
     const productCtx = useContext(FunctionalContext)
     const [btnBouncing ,setBtnBouncing] = useState(false)
 
     const onAddHandler = () => {
-        productCtx.addItem(value);
+        productCtx.addItem(item);
     }
     const onreduceHandler = () => {
-        productCtx.removeItem(value.id);
+        productCtx.removeItem(item.id);
     }
 
     useEffect(()=>{
@@ -138,18 +139,18 @@ const ProductInCart = ({ value }) => {
  
     return (
         <Wrapper>
-            <img src={value.img_url} />
+            <img src={item.img_url} />
 
             <div className="item-wrapper">
-                <p className="ttile">{value.name}</p>
-                <p className="description">{value.description}</p>
+                <p className="ttile">{item.name}</p>
+                <p className="description">{item.description}</p>
                 <div className="flex">
                     <div className="btn-control">
                         <button onClick={onreduceHandler}>-</button>
-                        <p className="amount">{value.amount}</p>
+                        <p className="amount">{item.amount}</p>
                         <button onClick={onAddHandler}>+</button>
                     </div>
-                    <p className={priceClass}>Total Price : <span>$ {value.totalprice}</span></p>
+                    <p className={priceClass}>Total Price : <span>$ {item.totalprice * item.amount}</span></p>
                 </div>
             </div>
 

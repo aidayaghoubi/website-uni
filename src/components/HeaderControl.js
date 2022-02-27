@@ -1,4 +1,4 @@
-import { Fragment, useContext, useRef, useState } from "react";
+import { Fragment, useContext, useLayoutEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import classes from './HeaderControl.module.scss';
 import { FunctionalContext } from "./store/product-context";
@@ -62,6 +62,14 @@ const HeaderControl = (props) => {
     }, [productCTX.items])
 
 
+    useLayoutEffect(() => {
+        if(searchModalShow) {
+            document.body.style.overflow = "hidden";
+        }else {
+            document.body.style.overflow = "auto";
+        }
+    } , [searchModalShow]);
+
     if (productCTX.items.length > 0) {
         amount = productCTX.items.reduce((acc, cur) => acc + cur.amount, 0)
     }
@@ -85,8 +93,8 @@ const HeaderControl = (props) => {
                     </a>
                     </li> : ''}
 
-                    {searchIsClicked ? <li className={classes.inputCntrol}>
-                        <input ref={searchInputRef} onChange={inputOncanegHandler}></input>
+                        {searchIsClicked ? <li className={classes.inputCntrol}>
+                            <input autoFocus ref={searchInputRef} onChange={inputOncanegHandler}></input>
                         <a onClick={closeInputHandler}>x</a>
                     </li>
                         : ''}

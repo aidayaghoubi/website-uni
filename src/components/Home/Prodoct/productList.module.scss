@@ -1,10 +1,28 @@
+// .product_container {
+//   display: flex;
+//   justify-content: space-evenly;
+//   flex-wrap: wrap;
+//   margin-bottom: 25px;
+//   animation: fadeDown 800ms ease-in-out;
+// }
 .product_container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  margin-top: 55px;
   margin-bottom: 25px;
   animation: fadeDown 800ms ease-in-out;
+  height: calc(100vh - 86px);
+  overflow: hidden;
+  overflow-y: scroll;
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  } 
+
+
 }
 
 @keyframes fadeDown {
