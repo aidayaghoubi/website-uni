@@ -1,19 +1,21 @@
 // import classes from './AboutUs.module.scss';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import MainComponent from '../../Mainomponent';
 import classes from './productwraper.module.scss';
 import { FunctionalContext } from '../../store/product-context';
 import { Globaldata } from '../../store/availableProduct';
-// import { FavoriteContext } from '../../store/favorite-context';
+import { FavoriteContext } from '../../store/favorite-context';
 
 const ProductWrap = ({ data }) => {
 
     const productCTX = useContext(FunctionalContext);
     const allProductCTX = useContext(Globaldata);
-    console.log(allProductCTX)
-    // const favCTX = useContext(FavoriteContext);
 
 
+     const favCTX = useContext(FavoriteContext);
+
+
+     console.log(favCTX)
     const [isFavClicled, setIsFavClicled] = useState(false)
 
     const addItemTolist = (eve) => {
@@ -30,21 +32,33 @@ const ProductWrap = ({ data }) => {
 
     }
 
+    useEffect(() => {
+
+        if (data.isFav) {
+            setIsFavClicled(true);
+        }
+
+    }, [allProductCTX.isFav])
+
+
+
     const changePassColor = () => {
 
 
     }
 
+    console.log(allProductCTX)
     const onFavBtnClickHandker = () => {
         if (isFavClicled) {
             setIsFavClicled(false)
             allProductCTX.removFromFavorite({
-                item:data
+                item: data
             })
+
         } else {
             setIsFavClicled(true);
             allProductCTX.addtoFavorite({
-                item:data
+                item: data
             })
         }
     }

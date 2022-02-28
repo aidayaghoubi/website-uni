@@ -28,14 +28,11 @@ const Wrapper = styled.div`
 const ProdoctList = ({ category }) => {
 
     const dataCTX = useContext(Globaldata);
-    console.log(dataCTX)
-
-
+  
 
 
     const P_list = dataCTX.items.filter(item => item.collection === category).slice(0, 3)
 
-    console.log(P_list);
     const data = {
         name: category
     }

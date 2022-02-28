@@ -108,7 +108,7 @@ const HeaderControl = (props) => {
                 
                  
                     {<li>
-                        <NavLink to='/home'>
+                        <NavLink to='/favorite'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
                                 <g id="Group_83" data-name="Group 83" transform="translate(-1628 -1453)">
                                     <g id="Group_78" data-name="Group 78" transform="translate(1633.966 1460.54)">

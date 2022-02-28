@@ -38,6 +38,9 @@ function App() {
             <Route path='/cart'>
               <CartProduct />
             </Route>
+            <Route path='/favorite'>
+            {/* <ProductPage colection='favorite' /> */}
+            </Route>1
             <Route path='*'>
 
             </Route>

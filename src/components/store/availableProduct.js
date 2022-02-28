@@ -357,22 +357,22 @@ const Database = ({ children }) => {
 
     const addtoFavorite = (item) => {
 
-        console.log(item)
+     
 
-        setState(prev => ({
+        setState({
             //  items:[...prev.item , item]
             item: state.item.map(el => el.id === item.id ? {...el , isFav : true } : el)
-        }))
-
+        })
+        console.log('true')
 
     }
     const removFromFavorite = (item) => {
 
-        setState(prev => ({
-            ...prev,
-            item: [...prev.item, state.item.map(el => el.id === item.id ? el.isFav = false : el)]
+        setState(({
+            item: state.item.map(el => el.id === item.id ? {...el , isFav : false } : el)
         }))
-        console.log(item)
+     
+        console.log('false')
     }
 
 

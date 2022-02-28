@@ -17,7 +17,6 @@ const Home = () => {
             <ProdoctList category='men'/>
             <ProdoctList category='women'/>
             <ProdoctList category='kid'/>
-           
         </Database>
     </section>)
 }
