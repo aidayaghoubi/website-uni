@@ -15,7 +15,6 @@ const ProductWrap = ({ data }) => {
      const favCTX = useContext(FavoriteContext);
 
 
-     console.log(favCTX)
     const [isFavClicled, setIsFavClicled] = useState(false)
 
     const addItemTolist = (eve) => {
@@ -47,7 +46,7 @@ const ProductWrap = ({ data }) => {
 
     }
 
-    console.log(allProductCTX)
+    
     const onFavBtnClickHandker = () => {
         if (isFavClicled) {
             setIsFavClicled(false)
