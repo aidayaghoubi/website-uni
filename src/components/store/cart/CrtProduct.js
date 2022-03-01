@@ -11,18 +11,19 @@ const Wrapper = styledComponents.div`
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
+    align-items: center;
+    width: 66%;
     -webkit-box-pack: justify;
     -webkit-justify-content: left;
     -ms-flex-pack: justify;
     justify-content: space-around;
     margin: 15px 0;
-    height:320px;
-    margin-top: 42px;
+    height:240px;
+    
   
             & img{
                 padding: 25px 0;
-                width: 477px;
+                height: 143px;
             }
             & .item-wrapper{
 
@@ -46,9 +47,12 @@ const Wrapper = styledComponents.div`
             & .flex{
 
                 display:flex;
+                // flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
                 margin: 9px 0;
+                margin-top: 23px;
+            
 
                 & .price{
                     font-size: 21px;
@@ -113,7 +117,7 @@ const ProductInCart = (item) => {
 
 
     const productCtx = useContext(FunctionalContext)
-    const [btnBouncing ,setBtnBouncing] = useState(false)
+    // const [btnBouncing ,setBtnBouncing] = useState(false)
 
     const onAddHandler = () => {
         productCtx.addItem(item);
@@ -122,20 +126,20 @@ const ProductInCart = (item) => {
         productCtx.removeItem(item.id);
     }
 
-    useEffect(()=>{
-        setBtnBouncing(true)
-        const timer = setTimeout(() => {
-            setBtnBouncing(false)
-        }, 500)
+    // useEffect(()=>{
+    //     setBtnBouncing(true)
+    //     const timer = setTimeout(() => {
+    //         setBtnBouncing(false)
+    //     }, 500)
 
-        return () => {
-            clearTimeout(timer);
-        }
+    //     return () => {
+    //         clearTimeout(timer);
+    //     }
 
-    } , [productCtx.items])
+    // } , [productCtx.items])
 
     
-    const priceClass = `price  ${btnBouncing ? 'boucing' : ''}`;
+    // const priceClass = `price  ${btnBouncing ? 'boucing' : ''}`;
  
     return (
         <Wrapper>
@@ -150,7 +154,7 @@ const ProductInCart = (item) => {
                         <p className="amount">{item.amount}</p>
                         <button onClick={onAddHandler}>+</button>
                     </div>
-                    <p className={priceClass}>Total Price : <span>$ {item.totalprice * item.amount}</span></p>
+                    <p className='price'>Total Price : <span>$ {item.totalprice * item.amount}</span></p>
                 </div>
             </div>
 
