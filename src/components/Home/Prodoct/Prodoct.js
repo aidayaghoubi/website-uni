@@ -28,7 +28,10 @@ const Wrapper = styled.div`
 const ProdoctList = ({ category }) => {
 
     const dataCTX = useContext(Globaldata);
-  
+    
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
 
     const P_list = dataCTX.items.filter(item => item.collection === category).slice(0, 3)

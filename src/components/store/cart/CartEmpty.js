@@ -14,6 +14,7 @@ const Wrapper = styledComponents.div`
     height:220px;
     display: flex;
     justify-content: center;
+    animation: moveFromDownh3 700ms ease-in-out;
     align-items: center;
     
     & .item__wraper{
@@ -47,15 +48,45 @@ const Wrapper = styledComponents.div`
                 font-size: 16px;
                 border-bottom: 1px solid transparent;
              padding-bottom: 5px;
+             position: relative;
 
-                &:hover{
-                    border-bottom: 1px solid;
-                     padding-bottom: 5px;
+             &::after{
+                 content: '';
+                 content: '';
+                    width: 0;
+                    height: 2px;
+                    position: absolute;
+                    background-color: #9898ba;
+                    /* left: 41px; */
+                    left: 0;
+                    top: 26px;
+                    transition: all 0.4s
+                
+                }
+
+                &:hover::after{
+                    // border-bottom: 1px solid;
+                    //  padding-bottom: 5px;
+                     width: 100%;
                 }
             }
             }
          }
     }
+
+    @keyframes moveFromDownh3 {
+
+        0%{
+            transform: translate(145%,0 );
+            
+        
+        100%{
+            transform: translate(0 ,0 );
+            
+        }
+        
+    }
+    
 `
 
 
@@ -200,14 +231,14 @@ const CartEmpty = () => {
                     <p className="empty_part_subTile">You can go to the following pages to see more products:</p>
 
                     <div className="links_wraper">
-                    <Link to='/home'> All products</Link>
-                    <Link to='/kid'>Kids</Link>
-                    <Link to='/men'>Men</Link>
-                    <Link to='wemon'>Women</Link>
+                        <Link to='/home'> All products</Link>
+                        <Link to='/kid'>Kids</Link>
+                        <Link to='/men'>Men</Link>
+                        <Link to='wemon'>Women</Link>
 
+                    </div>
                 </div>
-                </div>
-                
+
             </div>
         </Wrapper>
     )

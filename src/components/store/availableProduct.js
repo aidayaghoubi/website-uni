@@ -95,7 +95,7 @@ const Dummy_product = [
         , isFav: false
     },
     {
-        style_code: `m27`,
+        style_code: `m30`,
         collection: 'men',
         color: ['red', 'blue', 'purple'],
         P_name: 'Midnight Navy / Metallic Gold — Sail',

@@ -6,46 +6,52 @@ import Home from './components/Home';
 import FunctionalProvider from './components/store/product-context';
 import CartProduct from './components/store/cart/Cart_product';
 import FavoriteContextProvider from './components/store/favorite-context';
+import ProfilePage from './components/profilecomponents/ProfilePage';
 
 
 function App() {
+
+
   return (
 
     <main>
       <FunctionalProvider>
-      
-          <Header />
-          <Switch>
-            <Route path='/' exact>
-              <Redirect to='/home' />
-            </Route>
-            <Route path='/home'>
-              <Home />
-            </Route>
-            <Route path='/women'>
-              <ProductPage colection='women' />
-            </Route>
-            {/* <Route path='/women/:id'>
+
+        <Header />
+        <Switch>
+          <Route path='/' exact>
+            <Redirect to='/home' />
+          </Route>
+          <Route path='/home'>
+            <Home />
+          </Route>
+          <Route path='/women'>
+            <ProductPage colection='women' />
+          </Route>
+          {/* <Route path='/women/:id'>
             <SingleWowenProduct colection='women' />
           </Route> */}
-            <Route path='/men'>
-              <ProductPage colection='men' />
+          <Route path='/men'>
+            <ProductPage colection='men' />
 
-            </Route>
-            <Route path='/kid'>
-              <ProductPage colection='kid' />
-            </Route>
-            <Route path='/cart'>
-              <CartProduct />
-            </Route>
-            <Route path='/favorite'>
+          </Route>
+          <Route path='/kid'>
+            <ProductPage colection='kid' />
+          </Route>
+          <Route path='/cart'>
+            <CartProduct />
+          </Route>
+          <Route path='/profile'>
+            <ProfilePage />
+          </Route>
+          <Route path='/favorite'>
             {/* <ProductPage colection='favorite' /> */}
-            </Route>1
-            <Route path='*'>
+          </Route>1
+          <Route path='*'>
 
-            </Route>
-          </Switch>
-       
+          </Route>
+        </Switch>
+
       </FunctionalProvider>
     </main>
 

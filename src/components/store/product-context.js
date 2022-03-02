@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const FunctionalContext = React.createContext();
+
+const PRODUCT_STORAGE_KEY = "product";
 
 const generateId = function () {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
@@ -8,12 +10,29 @@ const generateId = function () {
 
 const FunctionalProvider = ({ children }) => {
 
-    const [state, setState] = useState(
-        {
-            items: [],
-            totalAmount: 0
+    const [state, setState] = useState(() => {
+        const productInLocalStorage = localStorage.getItem(PRODUCT_STORAGE_KEY)
+
+        return {
+            items : productInLocalStorage ? JSON.parse(productInLocalStorage) :  [],
+            totalAmount : 0
         }
-    )
+
+        // if(productInLocalStorage) {
+        //     return productInLocalStorage
+        // }else return {
+        //     items: [],
+        //     totalAmount: 0
+        // }
+
+    })
+
+    console.log(state);
+
+    // let hardHeavyCalculation = document;
+    // const [first, setFirst] = useState(() => {
+    //     return localStorage.getItem("product");
+    // })
     const addItem = (item) => {
 
         // if (state.items.find(product => product.id === item.id)) {
@@ -81,15 +100,28 @@ const FunctionalProvider = ({ children }) => {
     const addToLocal = () => {
 
         const storedDate = state.items.map(el => el);
-        localStorage.setItem('product', JSON.stringify(storedDate));
-        const itemss = localStorage.getItem('product');
-        console.log(JSON.parse(itemss))
+
+        // localStorage.setItem('product', JSON.stringify(storedDate));
+        // const itemss = localStorage.getItem('product');
+        // console.log(JSON.parse(itemss))
     }
     // const storedDate = state.items.map(el => el);
 
     //   localStorage.setItem('product' , JSON.stringify(storedDate));
     //   const itemss = localStorage.getItem('product');
     //   console.log(JSON.parse(itemss))
+
+
+    // useEffect(() => {
+    //     setState(localStorage.getItem("product"));
+    // } , []);
+
+    // useEffect(() => {
+    //     if(state.items.length) {
+    //         localStorage.setItem(PRODUCT_STORAGE_KEY , JSON.stringify(state.items));
+    //     }
+    // } , [state]);
+
     return (
         <FunctionalContext.Provider
             value={{

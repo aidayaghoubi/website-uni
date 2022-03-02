@@ -6,12 +6,18 @@ import { Globaldata } from "./store/availableProduct";
 import { useEffect } from "react";
 import SearchCart from "./searchModule/searchCart";
 
-const HeaderControl = (props) => {
+const HeaderControl = ({ serachHanlder }) => {
 
     const productCTX = useContext(FunctionalContext);
     const availbalePCTX = useContext(Globaldata);
 
+    useEffect(() => {
+        setSearchIsClicked(false);
+        setSearchModalShow(false);
+        searchInputRef.current.value = '';
+        console.log('de', serachHanlder)
 
+    }, [serachHanlder])
 
     const searchInputRef = useRef('');
 
@@ -38,6 +44,7 @@ const HeaderControl = (props) => {
     const closeInputHandler = () => {
         setSearchIsClicked(false);
         setSearchModalShow(false);
+        searchInputRef.current.value = '';
     }
 
     // const onBlurInputHandler = () => {
@@ -104,10 +111,10 @@ const HeaderControl = (props) => {
 
                         </li>
                     </div>}
-                   
-                
-                 
-                    {<li>
+
+
+
+                    {<li onClick={closeInputHandler}>
                         <NavLink to='/favorite'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
                                 <g id="Group_83" data-name="Group 83" transform="translate(-1628 -1453)">
@@ -122,7 +129,7 @@ const HeaderControl = (props) => {
 
                         </NavLink>
                     </li>}
-                    <li className={btnclass} >
+                    <li className={btnclass} onClick={closeInputHandler} >
                         <NavLink to='/cart' >
                             <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
                                 <g id="Group_81" data-name="Group 81" transform="translate(-1625 -1410)">
@@ -137,7 +144,7 @@ const HeaderControl = (props) => {
                         </NavLink>
                     </li>
                 </ul>
-                <NavLink to='/profile' className={classes.profileBtn}>
+                <NavLink to='/profile' className={classes.profileBtn} onClick={closeInputHandler}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="26.797" height="26.945" viewBox="0 0 26.797 26.945">
                         <g id="Group_77" data-name="Group 77" transform="translate(-1709.864 -77.808)">
                             <g id="Group_4" data-name="Group 4" transform="translate(1702.286 69.265)">
