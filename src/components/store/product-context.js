@@ -116,11 +116,11 @@ const FunctionalProvider = ({ children }) => {
     //     setState(localStorage.getItem("product"));
     // } , []);
 
-    // useEffect(() => {
-    //     if(state.items.length) {
-    //         localStorage.setItem(PRODUCT_STORAGE_KEY , JSON.stringify(state.items));
-    //     }
-    // } , [state]);
+     useEffect(() => {
+         if(state.items.length) {
+             localStorage.setItem(PRODUCT_STORAGE_KEY , JSON.stringify(state.items));
+         }
+     } , [state]);
 
     return (
         <FunctionalContext.Provider

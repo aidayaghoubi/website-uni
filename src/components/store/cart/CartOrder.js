@@ -8,7 +8,7 @@ const Div = styledComponents.div`
 margin-top: 90px;
 background-color: #cac8c8;
 position: fixed;
-width: 316px;
+width: 290px;
 right: 13%;
 border-radius: 25px;
 height: calc(100vh - 15%);
