@@ -11,7 +11,8 @@ const generateId = function () {
 const FunctionalProvider = ({ children }) => {
 
     const [state, setState] = useState(() => {
-        const productInLocalStorage = localStorage.getItem(PRODUCT_STORAGE_KEY)
+        const productInLocalStorage = localStorage.getItem(PRODUCT_STORAGE_KEY);
+        console.log(productInLocalStorage ,'in local');
 
         return {
             items : productInLocalStorage ? JSON.parse(productInLocalStorage) :  [],

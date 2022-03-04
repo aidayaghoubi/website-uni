@@ -48,7 +48,7 @@ const FormWrapper = styledComponents.div`
 
                 
                 display: flex;
-                align-items: flex-start;
+                align-items: center;
                 justify-content: center;
                 flex-direction: column;
                 width: 92%;
@@ -139,11 +139,11 @@ const LoginForm = () => {
     const [inputFocused ,setInputFocused ] = useState(false)
 
     const inputOnFocusHandler = () => {
-        setInputFocused(inputFocused ? false : true);
+        setInputFocused(true);
         console.log('in focus')
     }
     const inputOnBlurHandler = () => {
-        setInputFocused(inputFocused ? false : true);
+        setInputFocused(false);
     }
     const labelFocusClass = inputFocused ? "focused" : '';
     return (
