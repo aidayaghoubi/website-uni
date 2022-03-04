@@ -144,6 +144,7 @@ const LoginForm = () => {
     }
     const inputOnBlurHandler = () => {
         setInputFocused(false);
+        console.log('in focus')
     }
     const labelFocusClass = inputFocused ? "focused" : '';
     return (
@@ -162,11 +163,11 @@ const LoginForm = () => {
                 </div>
                 <div className="input_wrapper">
                     <label className={labelFocusClass}>Password</label>
-                    <input type='text' onFocus={inputOnFocusHandler}/>
+                    <input type='text' onFocus={inputOnFocusHandler} onBlur={inputOnBlurHandler}/>
                 </div>
                 <div className="input_wrapper">
                     <label className={labelFocusClass}>Confirm your Password</label>
-                    <input type='text' onFocus={inputOnFocusHandler}/>
+                    <input type='text' onFocus={inputOnFocusHandler} onBlur={inputOnBlurHandler}/>
                 </div>
                 <div className="terms_of_policy">
                     <label>I agree to the Terms of Service and Privacy Policy</label>
