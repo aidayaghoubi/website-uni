@@ -12,8 +12,7 @@ const FunctionalProvider = ({ children }) => {
 
     const [state, setState] = useState(() => {
         const productInLocalStorage = localStorage.getItem(PRODUCT_STORAGE_KEY);
-        console.log(productInLocalStorage ,'in local');
-
+       
         return {
             items : productInLocalStorage ? JSON.parse(productInLocalStorage) :  [],
             totalAmount : 0
@@ -27,8 +26,6 @@ const FunctionalProvider = ({ children }) => {
         // }
 
     })
-
-    console.log(state);
 
     // let hardHeavyCalculation = document;
     // const [first, setFirst] = useState(() => {
@@ -118,9 +115,12 @@ const FunctionalProvider = ({ children }) => {
     // } , []);
 
      useEffect(() => {
-         if(state.items.length) {
-             localStorage.setItem(PRODUCT_STORAGE_KEY , JSON.stringify(state.items));
-         }
+        localStorage.setItem(PRODUCT_STORAGE_KEY , state.items.length ? JSON.stringify(state.items) : '')
+        //  if(state.items.length) {
+        //      localStorage.setItem(PRODUCT_STORAGE_KEY , JSON.stringify(state.items));
+        //  }else{
+        //     localStorage.setItem(PRODUCT_STORAGE_KEY , '');
+        //  }
      } , [state]);
 
     return (

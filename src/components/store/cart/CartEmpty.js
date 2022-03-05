@@ -3,6 +3,7 @@ import { FunctionalContext } from "../product-context";
 import styledComponents from "styled-components";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { UserIsLoged } from "../user-context";
 
 const Wrapper = styledComponents.div`
 
@@ -92,6 +93,8 @@ const Wrapper = styledComponents.div`
 
 const CartEmpty = () => {
 
+    const UserLog = useContext(UserIsLoged)
+    console.log(UserLog ,'ha')
 
     return (
         <Wrapper>

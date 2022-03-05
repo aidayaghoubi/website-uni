@@ -15,8 +15,7 @@ const HeaderControl = ({ serachHanlder }) => {
         setSearchIsClicked(false);
         setSearchModalShow(false);
         searchInputRef.current.value = '';
-        console.log('de', serachHanlder)
-
+        
     }, [serachHanlder])
 
     const searchInputRef = useRef('');

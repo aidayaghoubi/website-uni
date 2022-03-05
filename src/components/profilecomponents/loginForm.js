@@ -1,7 +1,8 @@
 import styledComponents from "styled-components";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-
+import { Link, Prompt } from "react-router-dom";
+import { useRef, useState } from "react";
+import { useContext } from "react";
+import { LoginData } from "../store/login-context";
 
 const FormWrapper = styledComponents.div`
 
@@ -56,12 +57,23 @@ const FormWrapper = styledComponents.div`
 
                     & label{
                     position: absolute;
-                    left: 15px;
-                    transition: all 0.5s ;
+                    left: 0px;
+                    top: 19px;
+                    transition: 0.3s;
+                    background-color: #a29e9e;
                     color: #fff;
+                    padding: 0 5px !important;
                     font-size: 14px;
                     }
-
+                    
+                    & .active{
+                        & + label {
+                            left: 4px !important;
+                            background-color: #a29e9e !important;
+                             padding: 0 5px !important;
+                            top: -8px !important;
+                        }
+                    }
                    
                  & input{
                         height: 50px;
@@ -74,10 +86,14 @@ const FormWrapper = styledComponents.div`
                         padding-left: 15px;
                         padding-top: 5px;
 
-                        &:focus{
-
-                                
-                          
+                    
+                        &:focus {
+                            & + label {
+                
+                                background-color: #a29e9e;
+                                // padding: 0 11px;
+                                top: -8px;
+                            }
                         }
                        
                     }
@@ -127,52 +143,103 @@ const FormWrapper = styledComponents.div`
             position: absolute;
             left: 15px !important;
             transition: all 0.5s !important;
-            color: #000 !important;
-            font-size: 12px !important;
+            color: #fff !important;
+        
+            font-size: 14px !important;
+            background-color: #a29e9e;
+            padding: 0 11px;
             top: -8px;
+        
             }
       
 `
 
-const LoginForm = () => {
+const INPUT_LIST = [
+    {
+        label: 'Email',
+        key: 'email'
+    },
+    {
+        label: 'pass',
+        key: 'pass'
+    }, {
+        label: 'passConfirm',
+        key: 'passConfirm'
+    },
+]
 
-    const [inputFocused ,setInputFocused ] = useState(false)
+const LoginForm = ({ show }) => {
 
-    const inputOnFocusHandler = () => {
-        setInputFocused(true);
-        console.log('in focus')
+
+    const loginCTX = useContext(LoginData);
+    
+    // const emailRef = useRef();
+    // const passwordRef = useRef();
+    // const confirmPasswordRef = useRef();
+    // const [inputFocused, setInputFocused] = useState(false);
+
+    const [inputValues, setInputValues] = useState({});
+    const [termsIsChecked, setTermsIsChecked] = useState(true);
+
+   
+    const inputOnChangeHandler = ({ target: { value } }, key) => {
+        setInputValues(prev => ({
+            ...prev,
+            [key]: value
+        }))
+
+        
+        // get dynamic property from an object
+        // const userName = "userName";
+        // obj[userName] // obj.userName
+
+        // // set dynamic property value from an object
+
+        // obj[userName] = "ali"
+
     }
-    const inputOnBlurHandler = () => {
-        setInputFocused(false);
-        console.log('in focus')
+    const formSubmitHandler = (e) => {
+
+        e.preventDefault();
+        const checkbox = document.getElementById('termsCheck');
+        if (!checkbox.checked) {
+            setTermsIsChecked(false);
+            alert('You should acceept terms of policy')
+            console.log('fe')
+        }else{
+ 
+            show(inputValues);
+            loginCTX.addToLocal(inputValues)
+           
+        }
+
     }
-    const labelFocusClass = inputFocused ? "focused" : '';
+    // const labelFocusClass = inputFocused ? "focused" : '';
     return (
         <FormWrapper>
-            <form>
-                <div style={{ disple: 'flex' , width:'91%'}}>
+            <form onSubmit={formSubmitHandler}>
+                <div style={{ disple: 'flex', width: '91%' }}>
                     <p className="Main_header">Sign up with your email</p>
                     <div className="sub_header">
                         <p>Already have an account? </p>
                         <Link to='/home'>Sign in</Link>
                     </div>
                 </div>
-                <div className="input_wrapper">
-                    <label className={labelFocusClass}>Email</label>
-                    <input type='text' onFocus={inputOnFocusHandler} onBlur={inputOnBlurHandler}/>
-                </div>
-                <div className="input_wrapper">
-                    <label className={labelFocusClass}>Password</label>
-                    <input type='text' onFocus={inputOnFocusHandler} onBlur={inputOnBlurHandler}/>
-                </div>
-                <div className="input_wrapper">
-                    <label className={labelFocusClass}>Confirm your Password</label>
-                    <input type='text' onFocus={inputOnFocusHandler} onBlur={inputOnBlurHandler}/>
-                </div>
+                {
+
+                    INPUT_LIST.map((el, i) => (
+                        <div className="input_wrapper" key={i}>
+                            <input className={inputValues[el.key] && 'active'} type='text' onChange={e => inputOnChangeHandler(e, el.key)} />
+                            <label>{el.label}</label>
+                        </div>
+                    ))
+                }
+
                 <div className="terms_of_policy">
                     <label>I agree to the Terms of Service and Privacy Policy</label>
-                    <input type='checkbox' />
+                    <input type='checkbox' id="termsCheck" />
                 </div>
+                {!termsIsChecked && <Prompt message={'you should accept the Terms of Service and Privacy Policy '}></Prompt>}
                 <div className="button_wrapper">
 
                     <button>SUBMIT</button>

@@ -109,8 +109,7 @@ const CartOrder = ({ totalPrice, totalAmount }) => {
 
     const [btnBouncing ,setBtnBouncing] = useState(false)
     const productCtx = useContext(FunctionalContext)
-    console.log(totalAmount, totalPrice)
-
+    
     useEffect(()=>{
         setBtnBouncing(true)
         const timer = setTimeout(() => {
