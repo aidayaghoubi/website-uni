@@ -1,8 +1,10 @@
-import { Fragment, useState , useContext} from "react";
+import { Fragment, useState, useContext } from "react";
 import Login from "./profilePortal";
 import UserLogedIn from "../store/user-context";
 import { UserIsLoged } from "../store/user-context";
 import LoginForm from "./loginForm";
+import ProfileCart from "./profile-cart";
+import MainComponent from "../Mainomponent";
 
 
 
@@ -19,9 +21,13 @@ const ProfilePage = () => {
 
     return (
         <Fragment>
+            <MainComponent>
 
-            {!userLogCTX.isLogIn.state && <Login> <LoginForm show={useLogedIn}/> </Login>} 
+                {userLogCTX.isLogIn.state && <ProfileCart />}
 
+            </MainComponent>
+
+            {!userLogCTX.isLogIn.state && <Login> <LoginForm show={useLogedIn} /> </Login>}
 
         </Fragment>
     )

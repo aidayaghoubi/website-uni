@@ -173,10 +173,10 @@ const LoginForm = ({ show }) => {
 
     const loginCTX = useContext(LoginData);
     
-    // const emailRef = useRef();
-    // const passwordRef = useRef();
-    // const confirmPasswordRef = useRef();
-    // const [inputFocused, setInputFocused] = useState(false);
+     const emailRef = useRef();
+     const passwordRef = useRef();
+     const confirmPasswordRef = useRef();
+     const [inputFocused, setInputFocused] = useState(false);
 
     const [inputValues, setInputValues] = useState({});
     const [termsIsChecked, setTermsIsChecked] = useState(true);
@@ -187,15 +187,6 @@ const LoginForm = ({ show }) => {
             ...prev,
             [key]: value
         }))
-
-        
-        // get dynamic property from an object
-        // const userName = "userName";
-        // obj[userName] // obj.userName
-
-        // // set dynamic property value from an object
-
-        // obj[userName] = "ali"
 
     }
     const formSubmitHandler = (e) => {
