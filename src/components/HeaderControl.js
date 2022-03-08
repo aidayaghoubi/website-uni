@@ -5,17 +5,25 @@ import { FunctionalContext } from "./store/product-context";
 import { Globaldata } from "./store/availableProduct";
 import { useEffect } from "react";
 import SearchCart from "./searchModule/searchCart";
+import { LoginData } from "./store/login-context";
+import { UserIsLoged } from "./store/user-context";
 
 const HeaderControl = ({ serachHanlder }) => {
 
     const productCTX = useContext(FunctionalContext);
     const availbalePCTX = useContext(Globaldata);
+    const UserLog=useContext(LoginData);
+    const isLogged=useContext(UserIsLoged)
+    
+    const useName=UserLog.logedInUser.items[UserLog.logedInUser.items.length-1];
+    console.log(UserLog)
+    console.log(isLogged.isLogIn.state)
 
     useEffect(() => {
         setSearchIsClicked(false);
         setSearchModalShow(false);
         searchInputRef.current.value = '';
-        
+
     }, [serachHanlder])
 
     const searchInputRef = useRef('');
@@ -151,11 +159,14 @@ const HeaderControl = ({ serachHanlder }) => {
                             </g>
                         </g>
                     </svg>
+                    {isLogged.isLogIn.state &&  <p className={classes.user_name}>{useName.username}</p> }
+                   
                 </NavLink>
+            
             </div>
             {searchModalShow && <SearchCart serachedItem={searchedrezult} />}
         </Fragment>
     )
 }
 
-export default HeaderControl;
+export default HeaderControl

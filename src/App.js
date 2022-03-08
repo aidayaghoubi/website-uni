@@ -48,7 +48,7 @@ function App() {
               </Route>
               <Route path='/favorite'>
                 {/* <ProductPage colection='favorite' /> */}
-              </Route>1
+              </Route>
               <Route path='*'>
 
               </Route>

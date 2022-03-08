@@ -17,3 +17,6 @@ const SearchCart = ({ serachedItem }) => {
 
 
 export default SearchCart;
+
+
+

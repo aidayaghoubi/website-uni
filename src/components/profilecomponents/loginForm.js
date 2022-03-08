@@ -156,15 +156,15 @@ const FormWrapper = styledComponents.div`
 
 const INPUT_LIST = [
     {
-        label: 'Email',
-        key: 'email'
+        label: 'UserName',
+        key: 'username'
     },
     {
-        label: 'pass',
-        key: 'pass'
+        label: 'Password',
+        key: 'password'
     }, {
-        label: 'passConfirm',
-        key: 'passConfirm'
+        label: 'Email',
+        key: 'email'
     },
 ]
 

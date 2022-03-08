@@ -27,6 +27,7 @@ const Header = () => {
                         </svg>
                     </a>
                 </div>
+            
                 <ul className={classes.links} onClick={navaclickHandler}>
                     <li>
                         <NavLink to='/home' activeClassName={classes.active}>Home</NavLink>
