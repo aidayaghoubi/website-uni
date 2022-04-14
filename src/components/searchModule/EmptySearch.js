@@ -6,16 +6,26 @@ import styled from "styled-components";
 
 const Wrapper = styledComponents.div`
 
-    background-color: #3c403f;
-    border-radius: 15px;
-    width: 55%;
-    margin: 15px auto;
-    margin-top:75px;
-    height:220px;
-    display: flex;
-    justify-content: center;
-    animation: moveFromDownh3 700ms ease-in-out;
-    align-items: center;
+background-color: #3c403f;
+border-radius: 15px;
+width: 89%;
+margin: 16px auto;
+/* margin-top: 75px; */
+height: 220px;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-pack: center;
+-webkit-justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
+-webkit-animation: moveFromDownh3 700ms ease-in-out;
+animation: moveFromDownh3 700ms ease-in-out;
+-webkit-align-items: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
     
     & .item__wraper{
 
@@ -109,7 +119,7 @@ const SearchEmpty = () => {
                 </div>
                 <div>
                     <p className="emty_part_title">No Results Found!</p>
-                   
+
                 </div>
 
             </div>

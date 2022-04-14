@@ -9,6 +9,7 @@ backgroundColor:transparent;
 background-size: cover;
 overflow: hidden;
 
+
 `
 const MainComponent = (props) => {
 

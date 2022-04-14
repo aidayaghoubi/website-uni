@@ -220,7 +220,8 @@ const LoginForm = ({ show }) => {
 
                     INPUT_LIST.map((el, i) => (
                         <div className="input_wrapper" key={i}>
-                            <input className={inputValues[el.key] && 'active'} type='text' onChange={e => inputOnChangeHandler(e, el.key)} />
+                            <input className={inputValues[el.key] && 'active'} type='text' 
+                            onChange={e => inputOnChangeHandler(e, el.key)} />
                             <label>{el.label}</label>
                         </div>
                     ))

@@ -117,7 +117,6 @@ const ProductInCart = (item) => {
 
 
     const productCtx = useContext(FunctionalContext)
-    // const [btnBouncing ,setBtnBouncing] = useState(false)
 
     const onAddHandler = () => {
         productCtx.addItem(item);
@@ -126,20 +125,6 @@ const ProductInCart = (item) => {
         productCtx.removeItem(item.id);
     }
 
-    // useEffect(()=>{
-    //     setBtnBouncing(true)
-    //     const timer = setTimeout(() => {
-    //         setBtnBouncing(false)
-    //     }, 500)
-
-    //     return () => {
-    //         clearTimeout(timer);
-    //     }
-
-    // } , [productCtx.items])
-
-    
-    // const priceClass = `price  ${btnBouncing ? 'boucing' : ''}`;
  
     return (
         <Wrapper>
@@ -154,7 +139,7 @@ const ProductInCart = (item) => {
                         <p className="amount">{item.amount}</p>
                         <button onClick={onAddHandler}>+</button>
                     </div>
-                    <p className='price'>Total Price : <span>$ {item.totalprice * item.amount}</span></p>
+                    <p className='price'>Total Price : <span>$ {Math.round(item.totalprice) * item.amount}</span></p>
                 </div>
             </div>
 

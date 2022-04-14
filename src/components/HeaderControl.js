@@ -2,7 +2,6 @@ import { Fragment, useContext, useLayoutEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import classes from './HeaderControl.module.scss';
 import { FunctionalContext } from "./store/product-context";
-import { Globaldata } from "./store/availableProduct";
 import { useEffect } from "react";
 import SearchCart from "./searchModule/searchCart";
 import { LoginData } from "./store/login-context";
@@ -11,56 +10,37 @@ import { UserIsLoged } from "./store/user-context";
 const HeaderControl = ({ serachHanlder }) => {
 
     const productCTX = useContext(FunctionalContext);
-    const availbalePCTX = useContext(Globaldata);
-    const UserLog=useContext(LoginData);
-    const isLogged=useContext(UserIsLoged)
-    
-    const useName=UserLog.logedInUser.items[UserLog.logedInUser.items.length-1];
-    console.log(UserLog)
-    console.log(isLogged.isLogIn.state)
+  
+    const UserLog = useContext(LoginData);
+    const isLogged = useContext(UserIsLoged)
+
+    const useName = UserLog.logedInUser.items[UserLog.logedInUser.items.length - 1];
+   
 
     useEffect(() => {
         setSearchIsClicked(false);
         setSearchModalShow(false);
-        searchInputRef.current.value = '';
+      
 
     }, [serachHanlder])
 
-    const searchInputRef = useRef('');
-
+    
     const [btnBouncing, setBtnBouncing] = useState(false);
 
     const [searchIsClicked, setSearchIsClicked] = useState(false);
     const [searchModalShow, setSearchModalShow] = useState(false);
-    const [searchedrezult, setSearchedrezult] = useState(null)
-
-    const inputOncanegHandler = () => {
-
-        // const enteredName = ;
-        const searchedDate = availbalePCTX.filter((item) => item.P_name.toLowerCase().includes(searchInputRef.current.value.toLowerCase()))
-        setSearchedrezult(searchedDate)
-        setSearchModalShow(true)
-
-
-    }
 
     const searhClickHandler = () => {
-        setSearchIsClicked(true)
+        setSearchIsClicked(true);
+        setSearchModalShow(true)
+      
     }
 
     const closeInputHandler = () => {
         setSearchIsClicked(false);
         setSearchModalShow(false);
-        searchInputRef.current.value = '';
+       
     }
-
-    // const onBlurInputHandler = () => {
-    //     setSearchIsClicked(false)
-    // }
-
-    // const dataShouldShow = (item) => {
-
-    // }
 
     let amount = 0;
 
@@ -95,7 +75,8 @@ const HeaderControl = ({ serachHanlder }) => {
         <Fragment>
             <div className={classes['header-control']}>
                 <ul className={classes.nav}>
-                    {!searchIsClicked ? <li style={{ cursor: 'pointer' }}> <a to='/home' onClick={searhClickHandler}>
+                    <li>
+                        <a onClick={searhClickHandler} style={{ cursor: 'pointer', backgroundoColor:'none'}}> 
                         <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
                             <g id="Group_81" data-name="Group 81" transform="translate(-1625 -1410)">
                                 <g id="find" transform="translate(1630.752 1415.726)">
@@ -104,23 +85,8 @@ const HeaderControl = ({ serachHanlder }) => {
                                 </g>
                                 <rect id="Rectangle_29" data-name="Rectangle 29" width="37" height="37" transform="translate(1625 1410)" fill="none" />
                             </g>
-                        </svg>
-                    </a>
-                    </li> : ''}
-
-                    {/* {searchIsClicked ? <li className={classes.inputCntrol}>
-                            <input autoFocus ref={searchInputRef} onChange={inputOncanegHandler}></input>
-                        <button onClick={closeInputHandler}>x</button> */}
-                    {<div className={searchIsClicked ? `${classes.show}` : `${classes.hide}`}>
-                        <li className={classes.inputCntrol}>
-                            <input autoFocus ref={searchInputRef} onChange={inputOncanegHandler}></input>
-                            <button onClick={closeInputHandler}>x</button>
-
-                        </li>
-                    </div>}
-
-
-
+                        </svg></a>
+                    </li>
                     {<li onClick={closeInputHandler}>
                         <NavLink to='/favorite'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
@@ -159,12 +125,12 @@ const HeaderControl = ({ serachHanlder }) => {
                             </g>
                         </g>
                     </svg>
-                    {isLogged.isLogIn.state &&  <p className={classes.user_name}>{useName.username}</p> }
-                   
+                    {isLogged.isLogIn.state && <p className={classes.user_name}>{useName.username}</p>}
+
                 </NavLink>
-            
+
             </div>
-            {searchModalShow && <SearchCart serachedItem={searchedrezult} />}
+            {searchModalShow && <SearchCart closeModal={setSearchModalShow} />}
         </Fragment>
     )
 }

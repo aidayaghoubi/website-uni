@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import reactDom from 'react-dom'
 import classes from './modal.module.scss';
+import Container from '../Home/container';
 
 // const Backdrop = () => {
 
@@ -9,9 +10,11 @@ import classes from './modal.module.scss';
 
 const ModalOverlay = (props) => {
 
-    return <div className={classes.modal}>
-        <div className={classes.content}>{props.children}</div>
-    </div>
+    return <Container>
+        <div className={classes.modal}>
+            <div className={classes.content}>{props.children}</div>
+        </div>
+    </Container>
 }
 
 

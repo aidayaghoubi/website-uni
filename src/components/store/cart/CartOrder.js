@@ -108,7 +108,9 @@ height: calc(100vh - 15%);
 const CartOrder = ({ totalPrice, totalAmount }) => {
 
     const [btnBouncing ,setBtnBouncing] = useState(false)
-    const productCtx = useContext(FunctionalContext)
+    const productCtx = useContext(FunctionalContext);
+    const tt = Math.round(totalPrice)
+    console.log(tt)
     
     useEffect(()=>{
         setBtnBouncing(true)
@@ -134,7 +136,7 @@ const CartOrder = ({ totalPrice, totalAmount }) => {
                     </div>
                     <div className='__wraper'>
                         <p className='__product_price'>PRICE </p>
-                        <p className={bouncclass}>{totalPrice}$</p>
+                        <p className={bouncclass}>{tt}$</p>
                     </div>
                 </div>
                 <div className='btn_wrapper'>
