@@ -6,7 +6,7 @@ display: block;
  -webkit-box-sizing: border-box;
  box-sizing: border-box;
  width: 100%;
-
+max-width: 1200px;
 
  `
 
