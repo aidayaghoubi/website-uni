@@ -5,13 +5,15 @@ import InnerCountainer from "./Home/InnerContainer";
 
 const Div = styled.div`
     
-backgroundColor:transparent;
+background-color:transparent;
 background-size: cover;
 overflow: hidden;
 
 
 `
 const MainComponent = (props) => {
+
+    console.log(props.bg)
 
     return (
         <Div>

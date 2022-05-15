@@ -1,11 +1,16 @@
+
+
 body {
   margin: 0;
-
   font-family: "Lato", sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1c1c25;
+  background:url("http://localhost:3000/static/media/Group 74.c82f3c8f4c8b0871d534.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 code {
