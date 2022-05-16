@@ -5,7 +5,7 @@ color:#FFF ;
     }
     & p{
     text-align: left;
-    font-size: 50px;
+    font-size: 35px;
     color: #979797;
     font-weight: bold;
     position: relative;
@@ -14,10 +14,10 @@ color:#FFF ;
     &::before{
         content: "";
         width: 74%;
-        height: 5px;
-        left: -73.5%;
+        height: 3px;
+        left: -74%;
         position: absolute;
-        top: 44px;
+        top: 32px;
         background-color: white;
     }
 }
