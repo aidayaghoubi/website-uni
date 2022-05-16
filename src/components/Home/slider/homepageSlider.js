@@ -77,12 +77,19 @@ background: url(http://localhost:3000${bg});
     .right-side {
         width: 20%;
 
+        & #main-title{
+          color: #fff;
+          font-size: 58px;
+          font-weight: bold;
+        }
+
       .info-box {
+
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin:60px 0;
+        margin: 34px 0;
         
         & p {
           color: #fff;
@@ -91,7 +98,7 @@ background: url(http://localhost:3000${bg});
 
         & span {
           color: #B4B6B7;
-          margin-top: 15px;
+          margin-top: 12px;
           font-size:16px;
         }
       }
@@ -131,24 +138,28 @@ background: url(http://localhost:3000${bg});
 
 const SLIDER_ITEMS = [
   {
+    title: "IV",
     color: "Wite , Red",
     image: Slider1,
     release: "1988",
     collection: "DNA Archive",
   },
   {
+    title: "II",
     color: "Black , Red",
     image: Slider2,
     release: "1986",
     collection: "640 Rir Jordan",
   },
   {
+    title: "VI",
     color: "blue",
     image: Slider3,
     release: "2002",
     collection: "R -palmer",
   },
   {
+    title: "I",
     color: "Black , Red",
     image: Slider2,
     release: "1986",
@@ -203,6 +214,9 @@ const HomePageSlider = () => {
           <div className="right-side">
             <div className="column-info">
               <div className="info-box">
+                <p id="main-title">{SLIDER_ITEMS[index].title}</p>
+              </div>
+              <div className="info-box">
                 <p>COLLECTION</p>
                 <span>{SLIDER_ITEMS[index].collection}</span>
               </div>
@@ -226,7 +240,7 @@ const HomePageSlider = () => {
               value={state.slideIndex}
               type="range"
               min={0}
-              max={4}
+              max={3}
             />
           </div>
         </div>

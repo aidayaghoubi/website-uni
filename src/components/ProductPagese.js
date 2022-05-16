@@ -10,21 +10,9 @@ import ProdoctTitle from "./Home/ProdictTitle";
 
 const ProductPage = (props) => {
 
-    // const [favProduct, setfavProduct] = useState(null);
     const products = useContext(Globaldata);
 
-    // if (props.colection === 'favorite') {
 
-    //     const relatedProductfav = products.filter(el => {
-    //         return el.collection === props.colection
-    //     })
-    //     setfavProduct(relatedProductfav)
-    // } else {
-    //     const relatedProduct = products.filter(el => {
-    //         return el.collection === props.colection
-    //     })
-    //     setfavProduct(relatedProduct)
-    // }
     const relatedProduct = products.filter(el => {
                return el.collection === props.colection
              })

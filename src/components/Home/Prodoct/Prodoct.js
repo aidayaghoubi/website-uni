@@ -12,15 +12,28 @@ const Wrapper = styled.div`
         margin-top:80px;
 
         & .more_btn{
+            position: relative;
             margin-left: 48%;
             font-size: 18px;
             color: #979797;
             text-decoration: none;
             border-bottom: 1px solid;
             border-color: #fff;
+            transition: 0.5s;
+/* 
+            &::after{
+                content:'';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #979797;
+            } */
 
-            &:hover{
-                transform: translateX(47px);
+            &:hover {
+                transform: translate(47px);
+                color: #fff
             }
         }
     `
