@@ -5,7 +5,8 @@
     height: 100%;
 }
 .modal {
-    background-color: #55555d;
+    // background-color: #55555d;
+    backdrop-filter: blur(105px);
     border-radius: 12px;
     position: fixed;
     z-index: 999;

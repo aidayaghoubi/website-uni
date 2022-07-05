@@ -11,7 +11,7 @@ border-radius: 15px;
 width: 89%;
 margin: 16px auto;
 /* margin-top: 75px; */
-height: 220px;
+height: 95px;
 display: -webkit-box;
 display: -webkit-flex;
 display: -ms-flexbox;
@@ -20,25 +20,25 @@ display: flex;
 -webkit-justify-content: center;
 -ms-flex-pack: center;
 justify-content: center;
--webkit-animation: moveFromDownh3 700ms ease-in-out;
-animation: moveFromDownh3 700ms ease-in-out;
+-webkit-animation: moveFromDown 700ms ease-in-out;
+animation: moveFromDown 700ms ease-in-out;
 -webkit-align-items: center;
 -webkit-box-align: center;
 -ms-flex-align: center;
 align-items: center;
     
-    & .item__wraper{
+    & .item__wrapper{
 
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         width: 100%;
 
-         & .emty_part_title{
-            font-size: 27px;
-            font-weight: bold;
+         & .empty_part_title{
+            font-size: 18px;
+            font-weight: lighter;
             color: #cac8c8;
-            margin: 11px 0;
+            margin: 11px 16px;
          }
 
          & .empty_part_subTile{
@@ -47,7 +47,7 @@ align-items: center;
             color: #a59e9e;
          }
 
-         & .links_wraper{
+         & .links_wrapper{
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -83,7 +83,7 @@ align-items: center;
             }
          }
     }
-    @keyframes moveFromDownh3 {
+    @keyframes moveFromDown {
 
         0%{
             transform: translate(0,150% );
@@ -103,9 +103,9 @@ const SearchEmpty = () => {
 
     return (
         <Wrapper>
-            <div className="item__wraper">
+            <div className="item__wrapper">
                 <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="120.447" height="121.095" viewBox="0 0 120.447 121.095">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="121.095" viewBox="0 0 120.447 121.095">
                         <g id="Group_10738" data-name="Group 10738" transform="translate(-223.584 -221.769)">
                             <path id="Path_1687" data-name="Path 1687" d="M340.126,301.148A33.549,33.549,0,1,0,373.677,334.7,33.55,33.55,0,0,0,340.126,301.148Zm-15.892,45.947a2.267,2.267,0,0,1-1.778-3.679l23.436-29.478a2.267,2.267,0,0,1,3.551,2.82l-23.433,29.48A2.258,2.258,0,0,1,324.234,347.095Zm35.037-20.508-23.437,29.48a2.268,2.268,0,1,1-3.551-2.821l23.437-29.48a2.268,2.268,0,0,1,3.551,2.822Z" transform="translate(-68.179 -65.211)" fill="none" />
                             <path id="Path_1688" data-name="Path 1688" d="M816.715,806.319l-.506-.508-12.245,12.244.3.3,3.247,3.242c2.08,2.085,6.508,1.031,9.892-2.347s4.433-7.813,2.353-9.892l-3.034-3.034Z" transform="translate(-476.791 -479.8)" fill="#616e7d" />
@@ -115,11 +115,9 @@ const SearchEmpty = () => {
                             <path id="Path_1692" data-name="Path 1692" d="M471.783,423.924,448.346,453.4a2.268,2.268,0,0,0,3.551,2.821l23.437-29.48a2.268,2.268,0,1,0-3.551-2.821Z" transform="translate(-184.241 -165.37)" fill="#fd583e" />
                         </g>
                     </svg>
-
                 </div>
                 <div>
-                    <p className="emty_part_title">No Results Found!</p>
-
+                    <p className="empty_part_title">no results found  :(  </p>
                 </div>
 
             </div>

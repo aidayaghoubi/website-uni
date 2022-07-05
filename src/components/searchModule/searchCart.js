@@ -6,23 +6,24 @@ import SearchCard from "./final-seatch";
 import { FunctionalContext } from "../store/product-context";
 import { Globaldata } from "../store/availableProduct";
 import { useEffect, useState , useContext } from "react";
+import ProductShow from "./productShow";
 
 
 const SearchCart = ({closeModal}) => {
 
     const [state , setState] =useState('');
-    const [searchedrezult, setSearchedrezult] = useState(null)
-    const availbalePCTX = useContext(Globaldata);
+    const [searchedResult, setSearchedResult] = useState(null)
+    const availableCTX = useContext(Globaldata);
 
     
     useEffect(()=>{
 
         if(state){
 
-            const searchedDate = availbalePCTX.filter((item) => item.P_name.toLowerCase().includes(state.toLowerCase()));
-            setSearchedrezult(searchedDate)
+            const searchedDate = availableCTX.filter((item) => item.P_name.toLowerCase().includes(state.toLowerCase()));
+            setSearchedResult(searchedDate)
         }else{
-            setSearchedrezult('')
+            setSearchedResult('')
         }
         
         
@@ -46,9 +47,9 @@ const SearchCart = ({closeModal}) => {
         <MainComponent>
 
             <SearchCard word={setInput} setClose={setCloseHandler}/>
-            {searchedrezult == 0 && <SearchEmpty />}
+            {searchedResult == 0 && <SearchEmpty />}
             {
-                searchedrezult &&  <ProductDirectory data={searchedrezult} />
+                searchedResult &&  <ProductShow data={searchedResult} />
             }
         </MainComponent>
     </Modal>

@@ -9,7 +9,7 @@ const SiteIntroAction = () => {
                 <span className={classes.lastpart}>In All Products</span>
             </div>
             <div className={classes.btnholder}>
-                <button className={classes.goColection}>Check Collection <span>
+                <a href='/women' className={classes.goColection}>Check Collection <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="31.687" height="31.687" viewBox="0 0 31.687 31.687">
                         <g id="Layer_2" data-name="Layer 2" transform="translate(15.844) rotate(45)">
                             <g id="arrow-upward">   
@@ -21,8 +21,8 @@ const SiteIntroAction = () => {
 
 
                 </span>
-                </button>
-                <button className={classes.basket}>
+                </a>
+                <a href='/men' className={classes.basket}>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="21.869" height="23.491" viewBox="0 0 21.869 23.491">
                             <g id="shop" transform="translate(0.401 0.4)">
@@ -33,7 +33,7 @@ const SiteIntroAction = () => {
                             </g>
                         </svg>
                     </span>
-                </button>
+                </a>
             </div>
         </div>
     )
